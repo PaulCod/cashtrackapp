@@ -1,6 +1,9 @@
 package cashtrack.cashtrackapi.model;
 
+import cashtrack.cashtrackapi.enums.PaymentMethod;
+import cashtrack.cashtrackapi.enums.ExpenseCategory;
 import jakarta.persistence.*;
+
 
 import java.math.BigDecimal;
 
@@ -15,10 +18,10 @@ public class Expense {
     private BigDecimal amount;
 
     @Enumerated(EnumType.STRING)
-    private String paymentMethod;
+    private PaymentMethod paymentMethod;
 
     @Enumerated(EnumType.STRING)
-    private String category;
+    private ExpenseCategory category;
 
     private String description;
 
@@ -42,19 +45,19 @@ public class Expense {
         this.amount = amount;
     }
 
-    public String getPaymentMethod() {
+    public PaymentMethod getPaymentMethod() {
         return paymentMethod;
     }
 
-    public void setPaymentMethod(String paymentMethod) {
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
 
-    public String getCategory() {
+    public ExpenseCategory getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(ExpenseCategory category) {
         this.category = category;
     }
 
