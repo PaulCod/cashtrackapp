@@ -2,6 +2,7 @@ package cashtrack.cashtrackapi.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "tb_user")
@@ -20,7 +21,7 @@ public class User {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
-    private List<Expense> expenses;
+    private List<Expense> expenses = new ArrayList<>();
 
     public Long getId() {
         return id;
